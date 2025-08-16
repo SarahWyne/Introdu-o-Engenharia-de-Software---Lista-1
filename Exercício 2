@@ -1,0 +1,40 @@
+package lista1;
+import java.util.Scanner;
+public class atividade2 {
+
+//encontrar imc
+	public static void main(String[] args) {
+		String msg = "Com base em seu peso, seu IMC é de: ";
+
+		try (Scanner s = new Scanner(System.in)) {
+			System.out.println("Insira seu peso (kg): ");
+			double peso = s.nextDouble();
+
+			System.out.println("Insira sua altura (m), adicionando vírgula: ");
+			double altura = s.nextDouble();
+
+			double imc = peso / (altura * altura);
+			System.out.println(msg + imc);
+
+//encontrar classificação do imc        
+			if (imc < 18.5) {
+				System.out.println("MAGREZA");
+			}
+			if (imc >= 18.5 && imc <= 24.9) {
+				System.out.println("NORMAL");
+			}
+			if (imc >= 25 && imc <= 29.9) {
+				System.out.println("SOBREPESO");
+			}
+			if (imc >= 30 && imc <= 34.9) {
+				System.out.println("OBESIDADE 1");
+			}
+			if (imc >= 35 && imc <= 39.9) {
+				System.out.println("OBESIDADE 2");
+			}
+			if (imc >= 40) {
+				System.out.println("OBESIDADE 3");
+			}
+		}
+	}
+}
